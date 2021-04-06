@@ -1,0 +1,30 @@
+{% extends "todo/base.html"%} {%block title%} CREATEPAGE{%endblock title%} {% block content %}
+
+<div class="jumbotron jumbotron-fluid" style="background-color: rgb(166, 169, 173);">
+    <div class="container">
+        <h1 class="display-4">
+            <center>Yapılacak Listesi</center>
+        </h1>
+        <p class="lead">
+            <center>Yapılacak Listesine Belirli Periyotlarla Yapılacak İşleri Yazabilirsin, Güncelleyebilirsin, Ekleyebilirsin, Silebilirsin</center>
+        </p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Yapılacak İş</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Açıklama</label>
+            <input type="text" class="form-control" name="açıklama">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="">
+            <label class="form-check-label" for="exampleCheck1">Bitti</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Listeye Ekle</button>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "todo/base.html"%} {%block title%} Yapılacak İş Yarat {%endblock title%} {% block content %}
+
+<div class="jumbotron jumbotron-fluid" style="background-color: rgb(166, 169, 173);">
+    <div class="container">
+        <h1 class="display-4">
+            <center>Yapılacak Listesi</center>
+        </h1>
+        <p class="lead">
+            <center>Yapılacak Listesine Belirli Periyotlarla Yapılacak İşleri Yazabilirsin, Güncelleyebilirsin, Ekleyebilirsin, Silebilirsin</center>
+        </p>
+    </div>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Yapılacak İş Tanımı</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="title">
+                <div id="emailHelp" class="form-text">saaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa buranere</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Açıklama</label>
+                <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
